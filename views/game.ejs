@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skribbl</title>
+    <link rel="stylesheet" href="/public/css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Skribbl</h1>
+    </div>
+    <div id="wrapper">
+        <div>
+            <div id="messageDiv">
+                <div id="message" style="width:100%;">
+                    <% if (message != '') { %>
+                        <%= message %>
+                    <% } %>
+                </div>
+            </div>
+            <div id="content-wrapper">
+                <div class="canvasContainer">
+                    <div id="canvasDiv">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <div id="nav">
+                        Color - <input type="color" id="color">
+                    </div>
+                </div>
+                <div class="chatContainer">
+                    <div class="usersDiv" id="chatAll">
+                        <ul id="messageContainer">
+
+                        </ul>
+                    </div>
+                    <div>
+                        <form id="sendContainer">
+                            <label for="messageInput"><strong>Write your Answer</strong><i style="float: right;" class="fas fa-comment"></i></label>
+                            <div class="textInputDiv" style="display: flex; justify-content: space-between; align-items: center;">
+                                <input type="text" id="messageInput" name="messageInput" placeholder="Write your answer here..." required style="width: 90%;">
+                                <button type="submit" id="send" class="sendButton"><i style="float: right;" class="fas fa-paper-plane fa-2x"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+    <script src="/public/js/client.js"></script>
+</body>
+
+</html>

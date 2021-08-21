@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/login.css">
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Skribbl</h1>
+    </div>
+    <h2>Play Now</h2>
+    <div id="wrapper">
+        <div>
+            <div id="messageDiv">
+                <div id="message">
+                    <% if (message != '') { %>
+                        <%= message %>
+                    <% } %>
+                </div>
+            </div>
+            <div class="form-container">
+                <form action="/login" method="POST">
+                    <div class="textInputDiv">
+                        <label for="name"><strong>Enter your Name</strong></label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <button type="submit" id="submit">Join the Game</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
